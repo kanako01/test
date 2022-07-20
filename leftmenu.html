@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Raleway:100,200,300,400,500,600,700,800,900');
+        /*font-family: 'Raleway', sans-serif;*/
+        *{
+            padding: 0;
+            margin: 0;
+            transition: all 0.8s;
+        }
+        body{
+             font-family: 'Merriweather', serif;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .left{
+            width:300px;
+            height: 100%;
+            background-color: rgb(11, 36, 11);
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 99;
+        }
+        .left .title{
+            width: 200px;
+            height: 100px;
+            margin: 50px auto;
+            text-align: center;
+            line-height: 100px;
+            background-color: pink;
+        }
+        .left .title>p{
+            color: rgb(11, 36, 11);
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .left .menu li{
+            width: 300px;
+            height: 40px;
+            background-color: pink;
+            border-bottom: 1px solid #191919;
+            text-align: center;
+            line-height: 40px;
+        }
+        .menu li a {
+            color: #191919;
+            font-size: 14px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+        }
+        #submenu{
+            width: 200px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.507);
+            position: absolute;
+            top:0;
+            left: 0;
+            z-index: 98;
+        }
+        #submenu li{
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            color: #191919;
+            line-height: 40px;    
+        }
+        #submenu li a{
+            color: #191919;
+        }
+        #submenu li:hover{
+            background-color: black;
+            color: #fff;
+        }
+        #submenu li:hover{
+            background-color:aliceblue;
+            color: #fff;
+        }
+        .sub{
+           display: none;
+        }
+        .sub:nth-child(1){
+            position: absolute;
+            top: 200px;
+            left: 0;
+            
+        }
+        .sub:nth-child(2){
+            position: absolute;
+            top: 240px;
+            left: 0;
+        }
+        .sub:nth-child(3){
+            position: absolute;
+            top: 280px;
+            left: 0;
+          
+        }
+        .sub:nth-child(4){
+            position: absolute;
+            top: 310px;
+            left: 0;
+          
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //home
+            $(".menu li:nth-child(1),.sub:nth-child(1)").on('mouseover',function(){
+                $("#submenu").stop(true).animate({left:'300px'},200,'swing');
+                $(".sub:nth-child(1)").css({display:'block'});
+            });
+           
+            $(".menu li:nth-child(1),.sub:nth-child(1)").on('mouseout',function(){
+                $("#submenu").stop(true).animate({left:'0'},200,'swing');
+                $(".sub:nth-child(1)").css({display:'none'});
+            }); 
+            
+             /*$(".sub li").on('mouseover',function(){
+                $(".sub:nth-child(1)").css({display:'block'});
+            });*/
+            //about
+            $(".menu li:nth-child(2),.sub:nth-child(2)").on('mouseover',function(){
+                $("#submenu").stop(true).animate({left:'300px'},200,'swing');
+                $(".sub:nth-child(2)").css({display:'block'});
+            });
+            $(".menu li:nth-child(2),.sub:nth-child(2)").on('mouseout',function(){
+                $("#submenu").stop(true).animate({left:'0'},200,'swing');
+                $(".sub:nth-child(2)").css({display:'none'});
+            });
+            //collection
+            $(".menu li:nth-child(3),.sub:nth-child(3)").on('mouseover',function(){
+                $("#submenu").stop(true).animate({left:'300px'},200,'swing');
+                $(".sub:nth-child(3)").css({display:'block'});
+            });
+            $(".menu li:nth-child(3),.sub:nth-child(3)").on('mouseout',function(){
+                $("#submenu").stop(true).animate({left:'0'},200,'swing');
+                $(".sub:nth-child(3)").css({display:'none'});
+            });
+            //details
+            $(".menu li:nth-child(4),.sub:nth-child(4)").on('mouseover',function(){
+                $("#submenu").stop(true).animate({left:'300px'},200,'swing');
+                $(".sub:nth-child(4)").css({display:'block'});
+            }); 
+            $(".menu li:nth-child(4),.sub:nth-child(4)").on('mouseout',function(){
+                $("#submenu").stop(true).animate({left:'0'},200,'swing');
+                $(".sub:nth-child(4)").css({display:'none'});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="left">
+        <div class="title"> <p>Tailor.Be</p> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Details</a></li>
+            </ul>
+        </div>  
+    </div>
+    
+    <div id="submenu">
+            
+                <ul class="sub">
+                    <li><a href="#">Sub01</a></li>
+                    <li><a href="#">Sub02</a></li>
+                    <li><a href="#">Sub03</a></li>
+                </ul>
+          
+            
+                <ul class="sub">
+                    <li><a href="#">Sub01</a></li>
+                    <li><a href="#">Sub02</a></li>
+                    <li><a href="#">Sub03</a></li>
+                </ul>
+       
+           
+                <ul class="sub">
+                    <li><a href="#">Sub01</a></li>
+                    <li><a href="#">Sub02</a></li>
+                    <li><a href="#">Sub03</a></li>
+                </ul>
+              
+                <ul class="sub">
+                    <li><a href="#">Sub01</a></li>
+                    <li><a href="#">Sub02</a></li>
+                    <li><a href="#">Sub03</a></li>
+                </ul>
+         
+        </div>
+    <main>
+        <img src="bg.jpg" alt="/">
+    </main>
+</body>
+</html>
