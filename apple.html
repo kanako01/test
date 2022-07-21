@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="apple.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           //박스를 개별적으로 선택했을때 오버레이 +  글자  나타나게 
+           //find 를 사용해
+           $(".img").first().on('mouseover',function(){
+           $(".img:first-child").find("span,a").css({opacity:'1'});
+           }).on('mouseout',function(){
+            $(".img:first-child").find("span,a").css({opacity:'0'});
+           });
+
+
+           $(".img").last().on('mouseover',function(){
+           $(".img:last-child").find("span,a").css({opacity:'1'});
+           }).on('mouseout',function(){
+            $(".img:last-child").find("span,a").css({opacity:'0'});
+           });
+
+
+
+           $(".img").filter(":nth-child(2)").on('mouseover',function(){
+           $(".img:nth-child(2)").find("span,a").css({opacity:'1'});
+           }).on('mouseout',function(){
+            $(".img:nth-child(2)").find("span,a").css({opacity:'0'});
+           });
+
+
+
+           $(".img").filter(":nth-child(3)").on('mouseover',function(){
+           $(".img:nth-child(3)").find("span,a").css({opacity:'1'});
+           }).on('mouseout',function(){
+            $(".img:nth-child(3)").find("span,a").css({opacity:'0'});
+           });
+
+
+
+            ////////////////////////
+        });
+    </script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <nav>
+            <a href="#">iPhone 13 Pro</a>
+            <ul>
+                <li><a href="#">개요</a></li>
+                <li><a href="#">제품사항</a></li>
+                <li><a href="#">구입하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--//header-->
+
+
+    <!--main-->
+    <main>
+        <h1>
+            iPhone 13 Pro<br/>
+            비약적으로 강하된 카메라<br/>
+            감각을 선사하는 디스플레이<br/>
+            이제 프로할 시간.
+        </h1>
+    </main>
+    <!--//main-->
+
+
+    <!--section-->
+    <section>
+        <div class="img">
+            <img src="01.jpg" alt="/">
+            <span><!--오버레이--></span>
+            <a href="#">악세사리</a>
+        </div>
+        <div class="img">
+            <img src="02.jpg" alt="/">
+            <span><!--오버레이--></span>
+            <a href="#">방수</a>
+        </div>
+        <div class="img">
+            <img src="03.jpg" alt="/">
+            <span><!--오버레이--></span>
+            <a href="#">랜더링</a>
+        </div>
+        <div class="img">
+            <img src="04.jpg" alt="/">
+            <span><!--오버레이--></span>
+            <a href="#">색상</a>
+        </div>
+    </section>
+    <!--/section-->
+
+
+    
+</body>
+</html>
